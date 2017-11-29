@@ -1,7 +1,7 @@
 import sys, shutil
 
 src = 'frontend/'
-dst = 'backend/'
+dst = './'
 
 shutil.copy(src + 'build/index.html', dst + 'templates/index.html')
 shutil.rmtree(dst + 'static')
