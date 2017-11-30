@@ -25,7 +25,9 @@ SECRET_KEY = '7#6=imgmq1^h=2r52h8!^tq3ew5!&44cy5dgbe*cc1&ny%7!gj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'storybookr.herokuapp.com'
+    ]
 
 
 # Application definition
