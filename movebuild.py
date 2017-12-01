@@ -1,4 +1,4 @@
-import sys, shutil
+import shutil
 
 src = 'frontend/'
 dst = './'

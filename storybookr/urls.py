@@ -19,7 +19,6 @@ from . import views
 # from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    url(r'^courses/', include('courses.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^.*$', views.serve_react),
 ]

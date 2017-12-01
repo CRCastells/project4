@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import LandingPage from './components/landing-page/landing-page';
+import AppBar from 'material-ui/AppBar';
+import Paper from 'material-ui/Paper';
+import Grid from 'material-ui/Grid';
+import Container from './components/container';
 
-class App extends Component {
+ export default class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          BAIHBSIHDFBAHBSFHIBAIBIDBAIJ
-        </p>
+      <div>
+	      <Grid container justify='center'>
+		      <Grid item xs={12} md={9}>
+		      	<AppBar> <h1 className='bar-title'>StoryBookr</h1>
+		      	</AppBar>
+		      	<Paper className='landing-info spacey'>
+		       		<LandingPage />
+		       	</Paper>
+		      </Grid>
+		    </Grid>
+			  <Grid container>
+			    <Container />
+			  </Grid>
       </div>
     );
   }
 }
 
-export default App;
