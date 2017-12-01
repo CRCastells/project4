@@ -1,28 +1,27 @@
 import React, { Component } from 'react';
+
+import { Link } from 'react-router'
+
 import './App.css';
-import LandingPage from './components/landing-page/landing-page';
-import AppBar from 'material-ui/AppBar';
-import Paper from 'material-ui/Paper';
-import Grid from 'material-ui/Grid';
-import Container from './components/container';
+import { AppBar, Grid } from 'material-ui'
 
  export default class App extends Component {
   render() {
     return (
-      <div>
-	      <Grid container justify='center'>
-		      <Grid item xs={12} md={9}>
-		      	<AppBar> <h1 className='bar-title'>StoryBookr</h1>
-		      	</AppBar>
-		      	<Paper className='landing-info spacey'>
-		       		<LandingPage />
-		       	</Paper>
-		      </Grid>
-		    </Grid>
-			  <Grid container>
-			    <Container />
-			  </Grid>
-      </div>
+    	<div>
+			  <AppBar>
+					<Grid container justify='space-between' alignItems='center'>
+						<Grid item>
+							<h1 className='title-bar'>StoryBookr</h1>
+						</Grid>
+						<Grid item className='nav'>
+							<Link to='/' className='nav-item'>Home</Link>
+							<Link to='/book' className='nav-item'>Book</Link>
+						</Grid>
+					</Grid>
+				</AppBar>
+				{this.props.children}
+			</div>
     );
   }
 }

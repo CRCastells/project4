@@ -2,12 +2,11 @@
 	margin-left: 1em;
 }
 
-.landing-info {
-	padding: 1rem;
-	margin: 6em 1em 0 1em;
-	background: url('http://www.publicdomainpictures.net/pictures/70000/velka/old-parchment.jpg') !important;
+.nav {
+	margin: 1rem;
 }
 
-.spacey {
-	margin: 5rem;
+.nav-item {
+	color: white;
+	margin: 1rem;
 }

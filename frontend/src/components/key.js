@@ -1,9 +1,8 @@
-
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { DragSource } from 'react-dnd'
 import ItemTypes from '../ItemTypes'
-
+import { browserHistory } from 'react-router'
 const style = {
 	'font-size': '126px', 
 	'cursor': 'move',	
@@ -17,12 +16,12 @@ const boxSource = {
 	},
 
 	endDrag(props, monitor) {
-		const item = monitor.getItem()
+		// const item = monitor.getItem()
 		const dropResult = monitor.getDropResult()
 
 		if (dropResult) {
-			alert(`You dropped ${item.name} into ${dropResult.name}!`)
-			window.location.href += 'book'
+			// window.location.href += 'http://localhost/book/'
+			browserHistory.push('book')
 		}
 	},
 }
