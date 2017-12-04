@@ -4,7 +4,7 @@ import { DragSource } from 'react-dnd'
 import ItemTypes from '../ItemTypes'
 import { browserHistory } from 'react-router'
 const style = {
-	'font-size': '126px', 
+	fontSize: '126px', 
 	'cursor': 'move',	
 }
 

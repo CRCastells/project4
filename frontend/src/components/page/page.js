@@ -1,27 +1,45 @@
 import React, { Component } from 'react'
 import { Paper, Grid } from 'material-ui'
-import { Link, BrowserRouter as Router } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default class Page extends Component {
 
 	constructor(props){
 		super(props)
 		this.state = {
-			content: 'test',
-			links: ['testlink']
+			page: {
+				content: '',
+				links: ['']
+			}
 		}
 	}
 
+	grabNewPage(link){
+		this.setState({
+			page: {
+				content: 'New Content',
+				links: ['link1', 'link2']
+			}
+		})
+	console.log(link)
+	}
+
 	componentDidMount(){
-		console.log(this.props);
+		
+		this.setState({
+			page: {
+				content: 'test',
+				links: ['testlink']
+			}
+		})
 	}
 
 	render () {
-		let links = this.state.links.slice()
-		links = links.map(link => {
+		let links = this.state.page.links.slice()
+		links = links.map((link, i) => {
 			return (
-				<div>
-					<Link to={'/book/'+link}>{link}</Link>
+				<div key={i}>
+					<Link to={'/book/'+link} onClick={event => this.grabNewPage(link)}>{link}</Link>
 				</div>
 				)
 		})
@@ -29,9 +47,11 @@ export default class Page extends Component {
 					<Grid item>
 						<Paper className='book'>
 							<div>
-								{this.state.content}
+								{this.state.page.content}
 							</div>
-							{this.state.links}
+							<div className='links'>
+									{links}
+							</div>
 						</Paper>
 					</Grid>
 					)

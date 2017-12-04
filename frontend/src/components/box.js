@@ -4,7 +4,7 @@ import { DropTarget } from 'react-dnd'
 import ItemTypes from '../ItemTypes'
 
 const style = {
-	'font-size': '126px', 
+	fontSize: '126px', 
 	'cursor': 'move',	
 }
 
