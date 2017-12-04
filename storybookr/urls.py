@@ -16,10 +16,13 @@ Including another URLconf
 from django.conf.urls import include,url
 from django.contrib import admin
 from . import views
+from rest_framework import routers, serializers, viewsets
+
 # from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^api/' , include('books.urls')),
     url(r'^.*$', views.serve_react),
 ]
 

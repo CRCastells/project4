@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { DragSource } from 'react-dnd'
 import ItemTypes from '../ItemTypes'
-import { browserHistory } from 'react-router'
+import { withRouter } from 'react-router-dom'
 const style = {
 	fontSize: '126px', 
 	'cursor': 'move',	
@@ -15,19 +15,25 @@ const boxSource = {
 		}
 	},
 
-	endDrag(props, monitor) {
+	endDrag(props, monitor,) {
 		// const item = monitor.getItem()
 		const dropResult = monitor.getDropResult()
 
 		if (dropResult) {
-			// window.location.href += 'http://localhost/book/'
-			browserHistory.push('book')
+			//window.location.href += 'book'
+			//BrowserRouter.history.push('book')
+			props.history.push('book')
 		}
 	},
 }
 
 
 class Key extends Component {
+
+	constructor(props){
+		super(props)
+	}
+
 	static propTypes = {
 		connectDragSource: PropTypes.func.isRequired,
 		isDragging: PropTypes.bool.isRequired,
@@ -43,14 +49,9 @@ class Key extends Component {
 	}
 }
 
-// @DragSource(ItemTypes.BOX, boxSource, (connect, monitor) => ({
-// 	connectDragSource: connect.dragSource(),
-// 	isDragging: monitor.isDragging(),
-// }))
-
-export default DragSource(ItemTypes.BOX, boxSource, (connect , monitor) => {
+export default withRouter(DragSource(ItemTypes.BOX, boxSource, (connect , monitor) => {
 	return {
 		connectDragSource: connect.dragSource(),
 		isDragging: monitor.isDragging(),
 	}
-})(Key)
+})(Key))
