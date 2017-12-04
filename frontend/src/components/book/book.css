@@ -1,6 +1,8 @@
 .book {
-	background-color: red;
-	height: 100px;
-	position: absolute;
-	top: 50%;
+  background: url('http://www.publicdomainpictures.net/pictures/70000/velka/old-parchment.jpg') !important;
+  height: 68vh;
+  width: 400px;
+  margin-top: 8rem;
+  padding: 1rem;
+  /*box-sizing: border-box;*/
 }

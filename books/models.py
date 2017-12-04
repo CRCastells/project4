@@ -45,4 +45,4 @@ class LinkAdmin(admin.ModelAdmin):
 		return obj.title
 
 	def link_to(self, obj):
-		return str(obj.links)
+		return str(', '.join(obj.links.all()))

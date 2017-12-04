@@ -8,7 +8,8 @@ export default (
 	<div>
 		<Route path='/' component={App}>
 			<IndexRoute component={LandingPage}/>
-			<Route path='/book' component={Book}/>
+			<Route path='/book' component={Book}>
+			</Route>
 		</Route>
   </div>
 )
