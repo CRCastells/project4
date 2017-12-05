@@ -27,7 +27,7 @@ class BookAdmin(admin.ModelAdmin):
 	published_on.short_description = 'Published on'
 
 class Link(models.Model):
-	title = models.CharField(max_length=120)
+	title = models.CharField(max_length=30)
 	book = models.ForeignKey(Book, on_delete=models.CASCADE)
 	content = models.TextField(default='')
 	links = models.ManyToManyField('self', blank=True, symmetrical=False)
