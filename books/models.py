@@ -27,16 +27,16 @@ class BookAdmin(admin.ModelAdmin):
 	published_on.short_description = 'Published on'
 
 class Link(models.Model):
-	title = models.CharField(max_length=30)
+	title = models.CharField(max_length=120)
 	book = models.ForeignKey(Book, on_delete=models.CASCADE)
 	content = models.TextField(default='')
-	links = models.ManyToManyField('self', blank=True)
+	links = models.ManyToManyField('self', blank=True, symmetrical=False)
 	
 	def __str__(self):
 		return self.title
 
 class LinkAdmin(admin.ModelAdmin):
-	list_display = ('link_title', 'book_title' , 'link_to')
+	list_display = ('link_title', 'book_title')
 
 	def book_title(self, obj):
 		return obj.book
@@ -44,5 +44,3 @@ class LinkAdmin(admin.ModelAdmin):
 	def link_title(self, obj):
 		return obj.title
 
-	def link_to(self, obj):
-		return str(', '.join(obj.links.all()))

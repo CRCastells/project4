@@ -7,13 +7,18 @@ from pprint import pprint
 # Create your views here.
 def getAllBooks(request):
 	books = Book.objects.all()
-	data = [JSONRenderer().render(BookSerializer(book).data) for book in books]
+	data = [BookSerializer(book).data for book in books]
 	return HttpResponse(JSONRenderer().render({'books':data}))
 
 def getOneBook(request):
 	path = request.path.split('/api/books/')[1]
 	book = Book.objects.get(id=path)
 	return HttpResponse(JSONRenderer().render({'book':BookSerializer(book).data}))
+
+def getAllPages(request):
+	pages = Link.objects.all()
+	data = [LinkSerializer(link).data for link in pages]
+	return HttpResponse(JSONRenderer().render({'pages':data}))
 
 def getOnePage(request):
 	path = request.path.split('/api/pages/')[1]

@@ -22,7 +22,7 @@ export default class Book extends Component {
 					<Route path={`${match.url}/:pageId`} component={Page}/>
 					<Route exact path={match.url} render={()=>(
 						<Paper className='book'>
-							<h1>Ready to begin? <Link to='/book/1'>Start</Link></h1>
+							<h1>Ready to begin? <Link to='/book/4'>Start</Link></h1>
 						</Paper>
 					)}/>
 				</Grid>

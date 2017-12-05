@@ -30,10 +30,6 @@ const boxSource = {
 
 class Key extends Component {
 
-	constructor(props){
-		super(props)
-	}
-
 	static propTypes = {
 		connectDragSource: PropTypes.func.isRequired,
 		isDragging: PropTypes.bool.isRequired,

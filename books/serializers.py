@@ -10,3 +10,4 @@ class LinkSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Link
 		fields = ('id','title','content', 'book','links')
+		depth = 1
